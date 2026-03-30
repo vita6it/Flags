@@ -1,0 +1,13 @@
+local function Import(Hash, Identify)
+    getgenv().SCRIPT_KEY = Identify
+
+    local Script = ("https://api.jnkie.com/api/v1/luascripts/public/%s/download"):format(Hash)
+    local Result = game:HttpGet(Script)
+
+    return loadstring(Result)
+end
+
+Import(
+    "2aec54f491b9cab5427f0ec159ad635cd743388fb38994e85509448a301ff868",
+    "50c9c8f9-adc8-488d-9359-d7a6bff9667f"
+)()
